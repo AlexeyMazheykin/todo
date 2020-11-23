@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TodoLIst from "./components/TodoList";
+import TodoList from "./components/TodoList";
 import AppHeader from "./components/AppHeader";
 import SearchPanel from "./components/SearchPanel";
+import './index.css'
+import ItemStatusFilter from "./components/ItemStatusFilter";
 
 
 
@@ -12,14 +14,15 @@ const App = () =>{
         { label: 'Make Awesome App', important: true, id: 2 },
         { label: 'Have a lunch', important: false, id: 3 },
     ]
-    const isLoggedIn = false;
-    const loginBox = <span>Log in please</span>
+
  return (
-     <div>
-         {isLoggedIn ? null : loginBox}
-         <AppHeader />
-         <SearchPanel />
-         <TodoLIst todos={ todoData } />
+     <div className="todo-app">
+         <AppHeader toDo={1} done={3} />
+         <div className="top-panel d-flex">
+             <SearchPanel />
+             <ItemStatusFilter />
+         </div>
+         <TodoList todos={ todoData } />
      </div>
  )
 }
