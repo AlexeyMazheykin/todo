@@ -2,23 +2,23 @@ import React from 'react';
 import TodoListItem from "./TodoListItem";
 import './TodoList.css'
 
-const TodoLIst = ({todos}) => {
+const TodoList = ({ todos }) => {
 
   const elements = todos.map((item) => {
 
-      const {id, ... itemProps} = item
+      const {id, ...itemProps} = item;
 
         return(
             <li key={id} className="list-group-item">
-                <TodoListItem {... itemProps}/>
+                <TodoListItem {...itemProps} />
             </li>
         )
     })
     return (
         <ul className="list-group todo-list">
             {elements}
- {/*if atr i empty its mean attr === true;*/}
+ {/*if atr is empty its mean attr === true;*/}
         </ul>
     )
 }
-export default TodoLIst;
+export default TodoList;
