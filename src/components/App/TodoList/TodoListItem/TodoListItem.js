@@ -2,10 +2,13 @@ import React, {Component} from 'react';
 import './todoListItem.css'
 
 export default class TodoListItem extends Component {
-    onLabelClick () {
 
+constructor() {
+    super();
+    this.onLabelClick = () => {
+        console.log(`Done: ${this.props.label}`)
     }
-
+}
     render() {
         const {label, important = true} = this.props;
         const style = {
@@ -17,7 +20,7 @@ export default class TodoListItem extends Component {
           <span
               className="todo-list-item-label"
               style={style}
-              onClick={ () => console.log(`Заебок блеать: ${label}`) }>
+              onClick={ this.onLabelClick }>
               {label}
           </span>
           <button type="button"
@@ -32,7 +35,6 @@ export default class TodoListItem extends Component {
         </span>
         );
     }
-
 }
 
 

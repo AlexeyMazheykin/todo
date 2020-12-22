@@ -8,7 +8,7 @@ const TodoList = ({ todos }) => {
 
       const {id, ...itemProps} = item;
 
-        return(
+      return(
             <li key={id} className="list-group-item">
                 <TodoListItem {...itemProps} />
             </li>
